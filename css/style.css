@@ -82,17 +82,14 @@ img, video, audio {
 .col-1 {
   float: left;
   width: 32%;
-  background: #ccc;
 }
 
 .col-2 {
   float: left;
   width: 66%;
-  background: #ccc;
 }
 
 .col-3 {
-  background: #ccc;
 }
 
 .clearfix:after {
@@ -120,7 +117,6 @@ img, video, audio {
   top: 0;
   left: 0;
   width: 100%;
-  background: #fff;
   z-index: 1;
  }
 
