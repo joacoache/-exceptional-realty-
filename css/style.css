@@ -1,78 +1,103 @@
-@import url('https://fonts.googleapis.com/css?family=Elsie:400,900');
-@import url('https://fonts.googleapis.com/css?family=Clicker+Script');
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-/* css stylesheet */
-/* CSS syntax:
-selector {
-  property: value;
-  property: value
-} */
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
 
-/* type selectors */
+/*////////// GLOBAL //////////*/
+
+h3 {
+  margin: 0 0 10px;
+}
 
 p {
-  font-size: 1em;
-  line-height: 1.5em
+  font-size: 1em; /* 16px, ?pt, 100%, 1em */
+  line-height: 1.5em;
+}
+
+figure {
+  margin: 0 0 10px;
 }
 
 figcaption {
-/*font-weight: normal;
-  font-size: 0.75em;
-  line-height: 1.5em;
-  font-family: Georgia, "Times New Roman", serif;*/
-  font: normal 0.75em/1.5em "Elsie Swash Caps", cursive;
-  color: #777.
+  font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
+  color: #777;
   text-align: right;
 }
 
-/* class selectors */
-
 .milk-text {
-  font: bold 2.6em "Elsie Swah Caps", cursive;
+  font: bold 2.6em 'Elsie Swash Caps', cursive;
   color: white;
-  text-shadow; 0 2px 3px #000,
+  text-shadow: 0 2px 3px #000;
 }
 
-/* id selector */
-#logo {
-  background: #99C1C1
+.shadow {
+  box-shadow: 0 3px 10px #333;
 }
 
-/* descent selector */
-#logo h1, h2 {
-  font-family: 'Montserrat', sans-serif;
-}
-
-/* pseudo selectors*/
-nav a:link, a:visited {
-  color: black;
-  text-decoration: none;
-}
-
-nav a:hover {
-  color: black;
-  text-decoration: underline;
-}
-
-nav a:active {
-  color: red;
-  text-decoration: none;
-}
-
-/*////////// MEDIA  ////////////*/
-
-img, video, audio {
-  max-width: 100%;
+.border-right {
+  border-right: 1px dotted #ccc;
+  padding: 30px;
 }
 
 
-/*////////// LAYOUT  ////////////*/
+
+/*////////// BACKGROUNDS //////////*/
+
+.white-wood {
+  background: url("../images/white-wood.jpg") no-repeat center top;
+  background-size: cover;
+}
+
+.light-fade {
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */}
+
+.medium-fade {
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #b3bead 62%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#b3bead 62%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#b3bead 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+
+.heavy-fade {
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #8e968a 80%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#8e968a 80%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#8e968a 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#8e968a',GradientType=0 ); /* IE6-9 */
+}
+
+/*/////// MEDIA ////////*/
+
+img, video, audio, iframe, table, form {
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
+}
+
+/*////////// FIXES //////////*/
 
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+
+.clear {
+  clear:both;
+}
+
+/*/////// LAYOUT ////////*/
 
 .wrapper {
   width: 960px;
@@ -92,15 +117,6 @@ img, video, audio {
 .col-3 {
 }
 
-.clearfix:after {
-  content: ".";
-  display: block;
-  clear: both;
-  visibility: hidden;
-  height: 0;
-  line-height: 0;
-}
-
 [class*="col-"] {
   margin-left: 2%;
 }
@@ -109,27 +125,11 @@ img, video, audio {
   margin-left: 0%;
 }
 
-
- /*//// SECTIONS ////*/
-
- header {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 1;
- }
-
- section {
-   padding: 20px;
-   margin-bottom: 20px;
- }
-
- /*//// Social ////*/
+/*/////// SOCIAL ////////*/
 
 #social {
   position: fixed;
-  top: 200px;
+  top: 185px;
   right: 20px;
   width: 40px;
   z-index: 1;
@@ -142,5 +142,353 @@ img, video, audio {
   background: yellow;
 }
 
+/*////////// HEADER //////////*/
+
+header {
+  margin: 0 0 30px;
+}
+
+/*////////// NAVBAR //////////*/
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+#navbar nav {
+  border-left: 1px solid #ccc;
+}
+
+#navbar nav a {
+  display: inline-block;
+  width: 16.66667%;
+  margin: 0;
+  padding: 22px 0;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  text-decoration: none;
+  font: 1em "Trebuchet MS", Arial, sans-serif;
+}
+
+#navbar nav a.selected {
+  background: #333;
+  color: white;
+}
+
+#navbar nav a:hover {
+  color: white;
+  background: #333;
+}
+
+/*////////// LOGO //////////*/
+
+#logo {
+  padding: 84px 0 0;
+}
+
+#logo h1 {
+  font-family: 'Clicker Script', cursive;
+  margin: 0;
+}
+
+#logo h2 {
+  font-family: 'Elsie Swash Caps', cursive;
+  margin: 0;
+}
+
+/*////////// MAIN SECTIONS //////////*/
+
+section {
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: white;
+
+}
+
+/*////////// DETAILS //////////*/
+
+#details {
+  border-top: 1px solid white;
+}
+
+#details div {
+  height: 221px;
+}
+
+#details a:link, #details a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#details a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#details a:active {
+  color: red;
+}
+
+/*////////// FOOTER //////////*/
+
+footer {
+  text-align: center;
+  font-size: 0.75em;
+  padding: 10px;
+  background: #eee;
+  border-top: 1px solid #ccc;
+}
+@import url(http://fonts.googleapis.com/css?family=Elsie+Swash+Caps:400,900);
+@import url(http://fonts.googleapis.com/css?family=Clicker+Script);
+
+/*////////// GLOBAL //////////*/
+
+h3 {
+  margin: 0 0 10px;
+}
+
+p {
+  font-size: 1em; /* 16px, ?pt, 100%, 1em */
+  line-height: 1.5em;
+}
+
+figure {
+  margin: 0 0 10px;
+}
+
+figcaption {
+  font: normal 0.75em/1.5em 'Elsie Swash Caps', cursive;
+  color: #777;
+  text-align: right;
+}
+
+.milk-text {
+  font: bold 2.6em 'Elsie Swash Caps', cursive;
+  color: white;
+  text-shadow: 0 2px 3px #000;
+}
+
+.shadow {
+  box-shadow: 0 3px 10px #333;
+}
+
+.border-right {
+  border-right: 1px dotted #ccc;
+  padding: 30px;
+}
 
 
+
+/*////////// BACKGROUNDS //////////*/
+
+.white-wood {
+  background: url("../images/white-wood.jpg") no-repeat center top;
+  background-size: cover;
+}
+
+.light-fade {
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#dfe5d7 40%,#b3bead 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */}
+
+.medium-fade {
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #b3bead 62%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#b3bead 62%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#b3bead 62%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 ); /* IE6-9 */
+}
+
+.heavy-fade {
+  background: #fcfff4; /* Old browsers */
+  background: -moz-linear-gradient(top, #fcfff4 0%, #8e968a 80%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fcfff4 0%,#8e968a 80%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fcfff4 0%,#8e968a 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#8e968a',GradientType=0 ); /* IE6-9 */
+}
+
+/*/////// MEDIA ////////*/
+
+img, video, audio, iframe, table, form {
+  width: 100%; /* IE */
+  max-width: 100%; /* FF, Safari, Chrome */
+}
+
+/*////////// FIXES //////////*/
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  height: 0;
+  line-height: 0;
+}
+
+.clear {
+  clear:both;
+}
+
+/*/////// LAYOUT ////////*/
+
+.wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.col-1 {
+  float: left;
+  width: 32%;
+}
+
+.col-2 {
+  float: left;
+  width: 66%;
+}
+
+.col-3 {
+}
+
+[class*="col-"] {
+  margin-left: 2%;
+}
+
+.first {
+  margin-left: 0%;
+}
+
+/*/////// SOCIAL ////////*/
+
+#social {
+  position: fixed;
+  top: 185px;
+  right: 20px;
+  width: 40px;
+  z-index: 1;
+}
+
+#social a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background: yellow;
+}
+
+/*////////// HEADER //////////*/
+
+header {
+  margin: 0 0 30px;
+}
+
+/*////////// NAVBAR //////////*/
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  border-bottom: 1px solid #ccc;
+  text-align: center;
+}
+
+#navbar nav {
+  border-left: 1px solid #ccc;
+}
+
+#navbar nav a {
+  display: inline-block;
+  width: 16.66667%;
+  margin: 0;
+  padding: 22px 0;
+  text-transform: uppercase;
+  color: black;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  text-decoration: none;
+  font: 1em "Trebuchet MS", Arial, sans-serif;
+}
+
+#navbar nav a.selected {
+  background: #333;
+  color: white;
+}
+
+#navbar nav a:hover {
+  color: white;
+  background: #333;
+}
+
+/*////////// LOGO //////////*/
+
+#logo {
+  padding: 84px 0 0;
+}
+
+#logo h1 {
+  font-family: 'Clicker Script', cursive;
+  margin: 0;
+}
+
+#logo h2 {
+  font-family: 'Elsie Swash Caps', cursive;
+  margin: 0;
+}
+
+/*////////// MAIN SECTIONS //////////*/
+
+section {
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: white;
+
+}
+
+/*////////// DETAILS //////////*/
+
+#details {
+  border-top: 1px solid white;
+}
+
+#details div {
+  height: 221px;
+}
+
+#details a:link, #details a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+#details a:hover {
+  color: black;
+  text-decoration: underline;
+}
+
+#details a:active {
+  color: red;
+}
+
+/*////////// FOOTER //////////*/
+
+footer {
+  text-align: center;
+  font-size: 0.75em;
+  padding: 10px;
+  background: #eee;
+  border-top: 1px solid #ccc;
+}
